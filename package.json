@@ -1,0 +1,7 @@
+{
+  "name": "nem-settlement",
+  "private": true,
+  "dependencies": {
+    "material-components-web": "^0.34.1"
+  }
+}
