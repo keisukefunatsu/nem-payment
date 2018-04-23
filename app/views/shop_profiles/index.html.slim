@@ -1,0 +1,19 @@
+h1 Listing shop_profiles
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @shop_profiles.each do |shop_profile|
+      tr
+        td = link_to 'Show', shop_profile
+        td = link_to 'Edit', edit_shop_profile_path(shop_profile)
+        td = link_to 'Destroy', shop_profile, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Shop profile', new_shop_profile_path

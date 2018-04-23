@@ -1,0 +1,25 @@
+ul.navbar-nav
+  - if shop_signed_in?    
+    li.nav-item
+      = link_to '売上登録', new_sale_path, class: 'nav-link'   
+    li.nav-item
+      = link_to '売上一覧', sales_path, class: 'nav-link'
+    - unless current_shop.shop_profile 
+      li.nav-item  
+        = link_to '店舗情報作成', new_shop_profiles_path, class: 'nav-link'  
+    - else
+      li.nav-item  
+        = link_to '店舗情報編集', edit_shop_profiles_path, class: 'nav-link'  
+    li.nav-item
+      = link_to '過去のNEM価格', xem_prices_path, class: 'nav-link'    
+    li.nav-item
+      = link_to 'アカウント編集', edit_shop_registration_path, class: 'nav-link'
+    li.nav-item
+      = link_to 'ログアウト', destroy_shop_session_path, method: :delete, class: 'nav-link'  
+    
+  - else
+    li.nav-item
+      = link_to 'ログイン', new_shop_session_path, class: 'nav-link'
+    li.nav-item
+      = link_to '新規登録', new_shop_registration_path, class: 'nav-link'
+

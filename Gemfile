@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.4.0'
+ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
@@ -17,10 +17,12 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
-
+# Set up cron jobs
+gem 'whenever', require: false
+# Authorization
 gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'master'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+# gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -36,9 +38,13 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Manage env variables
+gem 'dotenv-rails'
+
 # Material css framework
-gem 'materialize-sass', '~> 1.0.0.beta'
-gem 'material_icons'
+gem 'bootstrap', '~> 4.0.0'
+gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
 # HTTP client
 gem 'faraday'
 # Use slim templates
@@ -46,7 +52,8 @@ gem 'slim-rails'
 gem 'html2slim'
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.1.0', require: false
+# gem 'bootsnap', '>= 1.1.0', require: false
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -61,6 +68,10 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'guard-livereload', require: false
+  gem 'foreman'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'faker'
 end
 
 group :test do

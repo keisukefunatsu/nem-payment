@@ -1,0 +1,59 @@
+script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"
+script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"
+script src="https://cdn.jsdelivr.net/npm/vue-axios@2.1.1/dist/vue-axios.min.js"
+.container  
+  .row 
+    .col-md-12  
+      #xem-payment-check
+        .card
+          h2.card-title.text-center NEM決済
+          h3.card-text.p-2 #{current_shop.shop_profile.name}
+          p.card-text.p-2 以下のQRコードを読み取ってXEMを送金して下さい
+          ul.list-group.list-group-flush
+            li.list-group-item 
+              | 金額：
+              = @sale.price_yen.to_i
+              |  円
+            li.list-group-item 
+              | 送金額：
+              = @sale.price_xem          
+              |  XEM    
+            li.list-group-item
+              | 送金先アドレス：NBHEOH-LCGIAA-HDXEMZ-2NUMI4-QZVDXD-7ZBMUE-KY5R
+            li.list-group-item
+              | 送金メッセージ：
+              = @sale.xem_message  
+          .card-body
+            p
+              a href=("http://xembook.net/?address=" + "#{@sale.xem_address}") target=('_blank')
+                | XEMBookで確認する
+            p
+              a href=("http://chain.nem.ninja/#/search/" + "#{@sale.xem_address}") target=('_blank')
+                | エクスプローラで確認する    
+            img src=('https://chart.apis.google.com/chart?chs=300x300&cht=qr&chl={"v":2,"type":2,"data":{"addr":"NBHEOH-LCGIAA-HDXEMZ-2NUMI4-QZVDXD-7ZBMUE-KY5R","amount":' + (@sale.price_xem * 1000000).to_s + ',"msg":"' + @sale.xem_message + '","name":"XEM-SETTLEMENT"}}')             
+            - unless @sale.confirmed
+              p v-show="isLoading"
+                = image_tag('loading.gif')
+              p.lead
+                | {{message}}
+              p
+                button.btn.btn-info @click="checkAddress"  再読込
+            - else  
+              p 
+                | 支払い済みです    
+        
+= javascript_include_tag 'vue_xem.js'  
+
+javascript:
+  var price_xem = '#{@sale.xem_message}'
+  var Settings = {
+    xem_message: '#{@sale.xem_message}',
+    xem_address: 'NBHEOH-LCGIAA-HDXEMZ-2NUMI4-QZVDXD-7ZBMUE-KY5R',
+    xem_price: '#{@sale.price_xem}',
+    xem_end_point: '#{xem_prices_check_xem_payment_url}',
+    sale_id: '#{@sale.id}',
+  }
+
+    
+
+    

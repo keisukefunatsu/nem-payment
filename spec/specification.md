@@ -2,28 +2,43 @@
 
 ## Table structure
 
-| table name | column name  | data type |
-| ---------- | ------------ | --------- |
-| sales      | price_crypto | integer   |
-|            | user_id      | integer   |
-|            | price_yen    | integer   |
-|            | memo         | text      |
-|            | confirmed    | boolean   |
-|            | updated_at   | datetime  |
-|            | created_at   | datetime  |
+- sales    
+
+| column name | data type |
+| ----------- | --------- |
+| price_xem   | integer   |
+| shop_id     | integer   |
+| price_yen   | decimal   |
+| memo        | text      |
+| xem_message | string    |
+| xem_address | string    |
+| confirmed   | boolean   |
+| updated_at  | datetime  |
+| created_at  | datetime  |
 
 
-| table name | column name  | data type |
-| ---------- | ------------ | --------- |
-| xem_price  | price_zaif   | integer   |
-|            | price_polo   | integer   |
-|            | updated_at   | datetime  |
-|            | created_at   | datetime  |
+- xem_prices
+
+| column name | data type |
+| ----------- | --------- |
+| price_zaif  | decimal   |
+| price_cap   | decimal   |
+| updated_at  | datetime  |
+| created_at  | datetime  |
 
 
 `excepting devise generated column`
 
-| table name | column name | data type |
-| ---------- | ----------- | --------- |
-| users      | name        | string    |
-|            | xem_address | json      |
+- profile
+
+| column name | data type |
+| ----------- | --------- |
+| name        | string    |
+| xem_address | string    |
+| tel_number  | string    |
+| shop_id     | integer   |
+
+## communication with APIs
+
+
+## Creating Sales

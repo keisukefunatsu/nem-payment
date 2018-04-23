@@ -1,4 +1,16 @@
 Rails.application.configure do
+  config.action_mailer.default_url_options = {  host: 'localhost', port: 3000 }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => 'smtp.gmail.com',
+    :user_name => ENV['GOOGLE_MAIL_ADDRESS'], #gmailアドレス
+    :password => ENV['GOOGLE_MAIL_PASSWORD'], #gmailパスワード
+    :authentication => 'login',
+  }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

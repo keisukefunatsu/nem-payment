@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price_zaif: 9.99
+  price_polo: MyString
+
+two:
+  price_zaif: 9.99
+  price_polo: MyString

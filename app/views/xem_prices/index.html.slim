@@ -1,0 +1,16 @@
+.container
+  .row
+    .col-md-12
+      h1 NEM決済支援
+      h2 過去のNEM価格
+      table.table
+        tr
+          th 価格
+          th 取得時間
+        - @xem_price.each do |xem|
+          tr
+            td
+              = xem.price_zaif
+            td
+              = xem.updated_at.in_time_zone('Tokyo').strftime('%Y年%m月%d日 %H:%M')
+      = paginate @xem_price, theme: 'twitter-bootstrap-4'

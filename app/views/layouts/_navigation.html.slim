@@ -1,23 +1,9 @@
-nav
-  .nav-wrapper
-    a.brand-logo href="#!"  Logo
-    a.sidenav-trigger data-target="mobile-side" href="#"
-      i.material-icons menu
-    ul.right.hide-on-med-and-down
-      li
-        a href="sass.html"  Sass
-      li
-        a href="badges.html"  Components
-      li
-        a href="collapsible.html"  Javascript
-      li
-        a href="mobile.html"  Mobile
-ul#mobile-side.sidenav
-  li
-    a href="sass.html"  Sass
-  li
-    a href="badges.html"  Components
-  li
-    a href="collapsible.html"  Javascript
-  li
-    a href="mobile.html"  Mobile
+nav.navbar.navbar-expand-md.bg-dark.navbar-dark
+  /! Brand
+  = link_to 'NEM決済', root_path, class: 'navbar-brand'
+  /! Toggler/collapsibe Button
+  button.navbar-toggler data-target="#collapsibleNavbar" data-toggle="collapse" type="button" 
+    span.navbar-toggler-icon
+  /! Navbar links
+  #collapsibleNavbar.collapse.navbar-collapse
+    = render 'layouts/navigation_menu'

@@ -1,28 +1,33 @@
-# README
+# Get started
+- Install gems
+    - `bundle install –path=vendor/bundle`
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Start local server
+    - `bin/server`
+        - guard livereload will automatically reload your browser.
 
-Things you may want to cover:
+- Ruby version
+    - 2.4.0 
 
-* Ruby version
+- System dependencies
 
-* System dependencies
+- Configuration
 
-* Configuration
+- Database creation
 
-* Database creation
+- Database initialization
 
-* Database initialization
+- How to run the test suite
 
-* How to run the test suite
+- Services (job queues, cache servers, search engines, etc.)
 
-* Services (job queues, cache servers, search engines, etc.)
+- Deployment instructions
 
-* Deployment instructions
-
-* ...
-
+- Cron job for getting xem currency rate
+    - run `bundle exec whenever` and paste output to cron
 
 ## tools
+Convert erb to slim
 - http://erb2slim.com/
+- `for i in app/views/**/*.erb; do erb2slim $i ${i%erb}slim && rm $i; done`
+

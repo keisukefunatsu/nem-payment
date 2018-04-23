@@ -1,0 +1,46 @@
+.container
+  .row
+    .col-md-8
+      = form_for @sale do |f|
+        - if @sale.errors.any?
+          #error_explanation
+            h2 = "保存できませんでした"
+            ul
+              - @sale.errors.full_messages.each do |message|
+                li = message
+
+        .form-group
+          = f.label :price_yen, '価格'
+          = f.text_field :price_yen, class: 'form-control'
+
+        .form-group
+          fieldset
+            = f.label :price_xem, 'XEM価格'
+            - if controller.action_name == 'new'
+              = f.text_field :price_xem, class: 'form-control'
+              p = "1XEM = #{@xem.price_zaif}"
+              p = "取得日時：#{@xem.updated_at.in_time_zone('Tokyo').strftime('%Y年%m月%d日 %H:%M')}"
+            - else
+              = f.text_field :price_xem, class: 'form-control'
+        .form-group
+          = f.label :memo, '会計メモ'
+          = f.text_area :memo, class: 'form-control'
+
+        .form-group
+          = f.label :xem_address, 'XEMアドレス'
+          = f.text_field :xem_address, class: 'form-control', value: current_shop.shop_profile.xem_address
+
+        .form-submit
+          = f.submit class: 'btn btn-primary'
+- if controller.action_name != 'edit'
+  javascript:
+    var price_xem = #{@xem.price_zaif}
+    $('#sale_price_yen').change(function(){
+      var price_yen = $('#sale_price_yen').val()
+      $('#sale_price_xem').val(Math.round(price_yen / price_xem * 100)/100)
+    })
+
+    // $.get('#{xem_prices_fetch_xem_price_url}', function(data){
+    //   $('#sale_price_xem').html = data.price_zaif
+    //   console.log(data.price_zaif)
+    // })00
