@@ -12,7 +12,7 @@ new Vue({
             if (that.isLoading == false) {
                 clearInterval(timer)
             }
-        }, 20000)
+        }, 5000)
     },
     methods: {
         checkAddress: function () {

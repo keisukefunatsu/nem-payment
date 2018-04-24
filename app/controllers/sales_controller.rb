@@ -3,6 +3,7 @@ class SalesController < ApplicationController
   before_action :set_sale, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_shop!, only: [:show, :edit, :update, :destroy]
   before_action :shop_profile_exists?, only: [:new, :show, :edit, :update, :destroy]
+  before_action :shop_has_sales?, only: [:show, :edit, :update, :destroy]
 
   def sales_to_csv
     @sales = Sale.where(shop_id: current_shop.id)
@@ -20,7 +21,7 @@ class SalesController < ApplicationController
   # GET /sales/1
   # GET /sales/1.json
   def show
-    @sale = Sale.find(params[:id])
+    @a = shop_has_sales?
   end
 
   # GET /sales/new
@@ -31,7 +32,6 @@ class SalesController < ApplicationController
 
   # GET /sales/1/edit
   def edit
-    @sale = Sale.find(params[:id])
     @xem = XemPrice.last
   end
 

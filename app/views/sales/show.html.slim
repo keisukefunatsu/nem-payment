@@ -1,9 +1,7 @@
-script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"
-script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"
-script src="https://cdn.jsdelivr.net/npm/vue-axios@2.1.1/dist/vue-axios.min.js"
 .container  
   .row 
     .col-md-12  
+      = @a
       #xem-payment-check
         .card
           h2.card-title.text-center NEM決済
@@ -41,8 +39,12 @@ script src="https://cdn.jsdelivr.net/npm/vue-axios@2.1.1/dist/vue-axios.min.js"
             - else  
               p 
                 | 支払い済みです    
-        
-= javascript_include_tag 'vue_xem.js'  
+                
+- unless @sale.confirmed        
+  script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"
+  script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"
+  script src="https://cdn.jsdelivr.net/npm/vue-axios@2.1.1/dist/vue-axios.min.js"
+  = javascript_include_tag 'vue_xem.js'  
 
 javascript:
   var price_xem = '#{@sale.xem_message}'
@@ -52,6 +54,7 @@ javascript:
     xem_price: '#{@sale.price_xem}',
     xem_end_point: '#{xem_prices_check_xem_payment_url}',
     sale_id: '#{@sale.id}',
+    confirmed: '#{@sale.confirmed}'
   }
 
     

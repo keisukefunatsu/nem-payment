@@ -22,6 +22,9 @@
 - Services (job queues, cache servers, search engines, etc.)
 
 - Deployment instructions
+    Set up database
+    - `rails db:migrate RAILS_ENV=production`
+   Set up  
 
 - Cron job for getting xem currency rate
     - run `bundle exec whenever` and paste output to cron

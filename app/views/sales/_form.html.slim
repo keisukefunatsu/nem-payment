@@ -30,6 +30,11 @@
           = f.label :xem_address, 'XEMアドレス'
           = f.text_field :xem_address, class: 'form-control', value: current_shop.shop_profile.xem_address
 
+        - if controller.action_name == 'edit'
+          .form-group
+            = f.label :confirmed, '支払い済み'
+            = f.check_box :confirmed, class: 'form-control'
+
         .form-submit
           = f.submit class: 'btn btn-primary'
 - if controller.action_name != 'edit'
