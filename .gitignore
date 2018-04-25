@@ -40,3 +40,7 @@ doc/
 .secret
 .env
 /vendor/bundle
+
+
+# Editor config
+/.vscode
