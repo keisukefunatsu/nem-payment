@@ -9,25 +9,25 @@
 - Ruby version
     - 2.4.0 
 
-- System dependencies
-
-- Configuration
-
-- Database creation
-
-- Database initialization
-
 - How to run the test suite
 
 - Services (job queues, cache servers, search engines, etc.)
 
-- Deployment instructions
-    Set up database
-    - `rails db:migrate RAILS_ENV=production`
-   Set up  
+# Deployment instructions
+Precompile js css
 
-- Cron job for getting xem currency rate
-    - run `bundle exec whenever` and paste output to cron
+`bundle exec rails assets:precompile RAILS_ENV=production`
+
+Set up database
+
+`bundle exec rails db:migrate RAILS_ENV=production`
+
+Set .env file 
+
+Cron job for getting xem currency rate 
+
+run `bundle exec whenever` and paste output to cron
+
 
 ## tools
 Convert erb to slim
