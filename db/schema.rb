@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2018_04_20_074426) do
     t.decimal "price_yen", precision: 10, scale: 2, default: "0.0"
     t.integer "shop_id"
     t.string "xem_message", default: "", null: false
-    t.text "memo", default: ""
+    t.text "memo"
     t.boolean "confirmed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
