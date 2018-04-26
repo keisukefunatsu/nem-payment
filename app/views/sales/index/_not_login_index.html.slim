@@ -1,8 +1,19 @@
 .container
-  .jumbotron.mt-4
+  .jumbotron.mt-4.main-hero
     h1.display-4 NEM決済支援ツール
-    p.lead NEMの店舗導入に少しでも役立てばと思いツールをつくりました。
+    ul.list-group
+      li.list-group-item QRコード出力＆決済完了まで自動化
+      li.list-group-item 最新のNEM価格換算で料金を自動計算
+      li.list-group-item 売上を一元管理
+      li.list-group-item CSV出力可能
+
+    h2.display-5 対応予定
+    ul.list-group
+      li.list-group-item ウォレットの入出金履歴
+      li.list-group-item ウォレットの時価総額計算等
+
+
     hr.my-4/    
-    = link_to '新規登録して使ってみる', new_shop_registration_path, class: 'btn btn-primary btn-lg'
+    = link_to '新規登録して使ってみる', new_shop_registration_path, class: 'btn btn-info btn-lg'
     
 
