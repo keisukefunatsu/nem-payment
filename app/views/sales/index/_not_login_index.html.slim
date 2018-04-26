@@ -1,16 +1,8 @@
 .container
-  .row
-    .col-md-12
-      h1 NEM決済支援
-      h2 過去のNEM価格
-      table.table
-        tr
-          th 価格
-          th 取得時間
-        - @xem_price.each do |xem|
-          tr
-            td
-              = xem.price_zaif
-            td
-              = xem.updated_at.in_time_zone('Tokyo').strftime('%Y年%m月%d日 %H:%M')
-      = paginate @xem_price, theme: 'twitter-bootstrap-4'
+  .jumbotron.mt-4
+    h1.display-4 NEM決済支援ツール
+    p.lead NEMの店舗導入に少しでも役立てばと思いツールをつくりました。
+    hr.my-4/    
+    = link_to '新規登録して使ってみる', new_shop_registration_path, class: 'btn btn-primary btn-lg'
+    
+

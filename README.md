@@ -7,7 +7,7 @@
         - guard livereload will automatically reload your browser.
 
 - Ruby version
-    - 2.4.0 
+    - 2.4.2
 
 - How to run the test suite
 
