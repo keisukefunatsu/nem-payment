@@ -17,7 +17,6 @@ production:
   adapter: mysql2
   encoding: utf8
   charset: utf8
-
   database: <%= ENV['NEM_PAYMENT_DB_NAME'] %>
   pool: 5
   username: <%= ENV['NEM_PAYMENT_DB_USER'] %>

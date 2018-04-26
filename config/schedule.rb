@@ -8,6 +8,6 @@ set :environment, rails_env
 set :output, "#{Rails.root}/log/cron.log"
 
 
-every 1.minutes do
+every '*/1 * * * *' do
   runner "XemPrice.new.fetch_price"
 end
