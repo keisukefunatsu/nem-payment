@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/plataformatec/devise.git
-  revision: 6260c29a867b9a656f1e1557abe347a523178fab
+  revision: d98f38cf5fbbd0e7395948eacaa8d5a4a7f7428c
   branch: master
   specs:
     devise (4.4.3)
@@ -59,7 +59,7 @@ GEM
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
-    autoprefixer-rails (8.3.0)
+    autoprefixer-rails (8.3.0.1)
       execjs
     bcrypt (3.1.11)
     better_errors (2.4.0)
@@ -97,9 +97,9 @@ GEM
     database_rewinder (0.8.3)
     debug_inspector (0.0.3)
     diff-lcs (1.3)
-    dotenv (2.3.0)
-    dotenv-rails (2.3.0)
-      dotenv (= 2.3.0)
+    dotenv (2.4.0)
+    dotenv-rails (2.4.0)
+      dotenv (= 2.4.0)
       railties (>= 3.2, < 6.0)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
@@ -197,7 +197,7 @@ GEM
       method_source (~> 0.9.0)
     public_suffix (3.0.2)
     puma (3.11.4)
-    rack (2.0.4)
+    rack (2.0.5)
     rack-test (1.0.0)
       rack (>= 1.0, < 3)
     rails (5.2.0)
