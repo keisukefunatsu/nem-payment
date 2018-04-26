@@ -2,7 +2,7 @@
   .row
     .col-md-5
       h2
-        | Resend confirmation instructions
+        | 確認メールを再送する
       = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
         = devise_error_messages!
         .form-group 
@@ -10,5 +10,5 @@
           br
           = f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: 'form-control'
         .actions
-          = f.submit "Resend confirmation instructions", class: 'btn btn-secondary'
+          = f.submit "確認メール再送", class: 'btn btn-secondary'
       = render "devise/shared/links"

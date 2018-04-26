@@ -1,8 +1,8 @@
 .container
   .row
-    .col-md-5
+    .col-md-8
       h2
-        | Forgot your password?
+        | パスワードを忘れましたか？
       = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
         = devise_error_messages!
         .form-group
@@ -10,5 +10,5 @@
           br
           = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
         .form-submit
-          = f.submit "Send me reset password instructions", class: 'btn btn-info'
+          = f.submit "パスワードリセット用のリンクをメール送信する", class: 'btn btn-info'
       = render "devise/shared/links"

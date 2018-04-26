@@ -1,1 +1,0 @@
-rails g model shop_profile name:string xem_address:string xem_address2:string xem_address3:string tel_number:string shop:references

@@ -5,7 +5,7 @@ class CreateSales < ActiveRecord::Migration[5.2]
       t.decimal :price_yen, precision: 10, scale: 2, default: 0
       t.references :shop, foreign_key: true
       t.string :xem_message, null: false, default: ""
-      t.text :memo, default: ""
+      t.text :memo
       t.boolean :confirmed, default: false
 
       t.timestamps

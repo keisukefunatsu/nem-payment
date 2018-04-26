@@ -19,7 +19,7 @@ module XemPricesHelper
       json = JSON.parse(response.body)
       json['last_price']
     else
-      xem_price_cap
+      0
     end    
   end
 
@@ -29,7 +29,7 @@ module XemPricesHelper
     json = JSON.parse(response.body)
     json['BTC_XEM']['last']
     else
-      xem_price_zaif
+      0
     end
   end
 
@@ -39,7 +39,7 @@ module XemPricesHelper
       json = JSON.parse(response.body)
       json[0]['price_jpy']
     else
-      xem_price_zaif
+      0
     end
   end
 
