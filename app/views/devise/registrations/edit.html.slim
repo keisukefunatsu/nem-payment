@@ -23,7 +23,7 @@
             br
             em
               = @minimum_password_length
-              |  characters minimum
+              |  文字以上入力して下さい
         .form-group
           = f.label :password_confirmation
           br
@@ -31,14 +31,13 @@
         .form-group
           = f.label :current_password
           i
-            | (we need your current password to confirm your changes)
+            | (現在のパスワードを入力して下さい)
           br
           = f.password_field :current_password, autocomplete: "off", class: 'form-control'
         .form-submit
-          = f.submit "Update", class: 'btn btn-info'
+          = f.submit "更新", class: 'btn btn-info'
       h3
-        | Cancel my account
+        | アカウントを削除する
       p
-        | Unhappy? 
-        = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-info'
+        = button_to "削除する", registration_path(resource_name), data: { confirm: "この操作は取り消せません" }, method: :delete, class: 'btn btn-info'
       = link_to "Back", :back

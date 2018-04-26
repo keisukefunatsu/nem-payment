@@ -2,7 +2,7 @@
   .row
     .col-md-5
       h2
-        | Sign up
+        | 新規登録
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = devise_error_messages!
         .form-group
@@ -15,7 +15,7 @@
             em
               | (
               = @minimum_password_length
-              |  characters minimum)
+              |  文字以上入力して下さい)
           br
           = f.password_field :password, autocomplete: "off", class: 'form-control'
         .form-group

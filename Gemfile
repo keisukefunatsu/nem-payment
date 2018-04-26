@@ -81,6 +81,9 @@ group :development do
 end
 
 group :test do
+  # Cleanup database after test
+  gem 'database_rewinder'
+
   gem 'rspec'
   gem "faker"
   # Adds support for Capybara system testing and selenium driver
