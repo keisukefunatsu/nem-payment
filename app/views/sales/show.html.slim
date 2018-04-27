@@ -29,7 +29,7 @@
             p
               a href=("http://explorer.nemchina.com/#/s_account?account=" + "#{@sale.xem_address}") target=('_blank')
                 | エクスプローラで確認する    
-            img src=('https://chart.apis.google.com/chart?chs=300x300&cht=qr&chl={"v":2,"type":2,"data":{"addr":"NBHEOH-LCGIAA-HDXEMZ-2NUMI4-QZVDXD-7ZBMUE-KY5R","amount":' + (@sale.price_xem * 1000000).to_s + ',"msg":"' + @sale.xem_message + '","name":"XEM-SETTLEMENT"}}')             
+            img src=('https://chart.apis.google.com/chart?chs=300x300&cht=qr&chl={"v":2,"type":2,"data":{"addr":"' + @sale.xem_address + '","amount":' + (@sale.price_xem * 1000000).to_s + ',"msg":"' + @sale.xem_message + '","name":"XEM-SETTLEMENT"}}')             
             p.lead
               | NEMウォレットからQRコードを読み込むと金額と送金が入力されます
             - unless @sale.confirmed
