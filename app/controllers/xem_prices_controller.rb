@@ -14,4 +14,7 @@ class XemPricesController < ApplicationController
     response = xem_payment(price, address, message, sale_id)
     render json: response
   end
+  def past_xem_price
+    @sale = Sale.find(params[:id])
+  end
 end

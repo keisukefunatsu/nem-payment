@@ -1,7 +1,9 @@
 doctype html
 html
   head
+    script src="https://www.googletagmanager.com/gtag/js?id=UA-118277769-1"
     meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"
+    meta name="google-site-verification" content="E3RYcuQbKtH5VXorkzwFafDq-7xZjSJjcX9I0fMXgf4"
     title
       | NEM決済支援
     = csrf_meta_tags
@@ -9,6 +11,14 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
+    
+
+    javascript:
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-118277769-1');
+
     == render 'layouts/navigation'
     - if flash[:notice]
       .alert.alert-success
@@ -19,3 +29,4 @@ html
     == yield
 
     == render 'layouts/footer'
+

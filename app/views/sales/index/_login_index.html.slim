@@ -25,8 +25,8 @@
                 | 円
 
               td
-                = sale.price_xem
-                | XEM
+                = link_to "#{sale.price_xem}XEM", past_xem_price_path(sale.id)
+                
 
               td
                 - if sale.confirmed
