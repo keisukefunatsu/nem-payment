@@ -42,6 +42,7 @@ doc/
 /vendor/bundle
 
 # Sitemap
+/public/sitemap.xml
 /public/sitemap.xml.gz
 
 # Editor config
