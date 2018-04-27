@@ -51,6 +51,8 @@ gem 'faraday'
 gem 'slim-rails'
 gem 'html2slim'
 
+# Sitemap
+gem 'sitemap_generator'
 # Reduces boot times through caching; required in config/boot.rb
 # gem 'bootsnap', '>= 1.1.0', require: false
 

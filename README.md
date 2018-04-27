@@ -29,8 +29,12 @@ Cron job for getting xem currency rate
 run `bundle exec whenever` and paste output to cron
 
 
+
+
 ## tools
 Convert erb to slim
 - http://erb2slim.com/
 - `for i in app/views/**/*.erb; do erb2slim $i ${i%erb}slim && rm $i; done`
 
+Generate sitemap
+- `bundle exec rails sitemap:refresh`

@@ -41,6 +41,8 @@ doc/
 .env
 /vendor/bundle
 
+# Sitemap
+/public/sitemap.xml.gz
 
 # Editor config
 /.vscode
