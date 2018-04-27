@@ -21,7 +21,6 @@ class SalesController < ApplicationController
   # GET /sales/1
   # GET /sales/1.json
   def show
-    @a = shop_has_sales?
   end
 
   # GET /sales/new

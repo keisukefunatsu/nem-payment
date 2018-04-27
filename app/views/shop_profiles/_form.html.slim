@@ -9,7 +9,7 @@
               - @shop_profile.errors.full_messages.each do |message|
                 li = message
         .form-group
-          = f.label :name, '店舗名'
+          = f.label :name, '店舗名（オプション）'
           = f.text_field :name, class: 'form-control'
         .form-group
           = f.label :xem_address, 'XEMアドレス'

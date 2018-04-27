@@ -3,8 +3,8 @@
 - multi signature
 ## Secondary
 - manage sales by each month
-## User
-- api authentication
+- show total sales by each month
+- xem address validation
 
 
 ## DB validation
