@@ -25,7 +25,8 @@
                 | 円
 
               td
-                = link_to "#{sale.price_xem}XEM", past_xem_price_path(sale.id)
+                / = link_to "#{sale.price_xem}XEM", past_xem_price_path(sale.id)
+                = "#{sale.price_xem}XEM"
                 
 
               td
