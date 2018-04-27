@@ -6,6 +6,8 @@
 - show total sales by each month
 - xem address validation
 
+## server 
+- backup
 
 ## DB validation
 ## Optional
