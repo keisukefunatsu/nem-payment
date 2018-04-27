@@ -35,7 +35,7 @@ new Vue({
                     }
                 }
             }).catch(function (error) {
-                concosle.log(error)
+                console.log(error)
                 that.message = '送金確認でエラーが発生しました'
             });
         }
