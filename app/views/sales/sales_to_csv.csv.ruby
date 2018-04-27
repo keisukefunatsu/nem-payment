@@ -6,7 +6,7 @@ CSV.generate(encoding: Encoding::SJIS, row_sep: "\r\n", force_quotes: true) do |
   unless @sales.empty?
     @sales.each do |sale|
       csv_column_values = [
-        sale.updated_at,
+        sale.updated_at.strftime('%Y/%m/%d %H:%M'),
         sale.price_yen,
         sale.price_xem,
         sale.xem_address,
