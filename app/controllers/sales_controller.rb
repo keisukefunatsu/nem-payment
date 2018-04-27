@@ -55,6 +55,7 @@ class SalesController < ApplicationController
   # PATCH/PUT /sales/1
   # PATCH/PUT /sales/1.json
   def update
+    @xem = XemPrice.last
     respond_to do |format|
       if @sale.update(sale_params)
         format.html { redirect_to @sale, notice: '売上が更新されました' }

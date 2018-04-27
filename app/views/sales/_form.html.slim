@@ -11,8 +11,10 @@
 
         .form-group
           = f.label :price_yen, '価格'
-          = f.text_field :price_yen, class: 'form-control', value: ''
-
+          - if controller.action_name == 'new'
+            = f.text_field :price_yen, class: 'form-control', value: ''
+          - else
+            = f.text_field :price_yen, class: 'form-control'
         .form-group
           fieldset
             = f.label :price_xem, 'XEM価格(新規作成時は自動計算されます)'
