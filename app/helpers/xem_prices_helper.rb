@@ -91,6 +91,10 @@ module XemPricesHelper
     super_node = xem_super_node_name
     address = "http://#{super_node}:7890/account/#{method}?address=#{address}"
     response = Faraday.get(address)
-    JSON.parse(response.body)
+    if response.success?
+      JSON.parse(response.body)
+    else
+      {status: 'NG'}
+    end    
   end
 end

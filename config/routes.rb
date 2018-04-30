@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   
   get 'xem_prices/fetch_xem_price'
   get 'xem_prices/check_xem_payment'
+  post 'xem_prices/check_xem_payment'
   get 'xem_prices/past_xem_price/:id', to: 'xem_prices#past_xem_price', as: 'past_xem_price'
   get 'xem_prices' => 'xem_prices#index'
 

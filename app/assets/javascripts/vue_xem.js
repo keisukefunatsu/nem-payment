@@ -17,13 +17,12 @@ new Vue({
     methods: {
         checkAddress: function () {
             var that = this
-            this.axios.get(Settings.xem_end_point, {
-                params: {
-                    xem_address: Settings.xem_address,
-                    xem_message: Settings.xem_message,
-                    xem_price: Settings.xem_price,
-                    sale_id: Settings.sale_id,
-                }
+            this.axios.post(Settings.xem_end_point, {
+                xem_address: Settings.xem_address,
+                xem_message: Settings.xem_message,
+                xem_price: Settings.xem_price,
+                sale_id: Settings.sale_id,
+                authenticity_token: Settings.auth_token,
             }).then(function (res) {
                 console.log(res)
                 if (res.status == '200') {
