@@ -7,6 +7,9 @@ FactoryGirl.define do
     after(:build) do |shop|
       shop.shop_profile ||= FactoryGirl.build(:shop_profile, shop: shop)
     end
+    after(:create) do |shop|
+      create_list(:sale, 3, shop: shop)
+    end
   end
 
   factory :shop_without_profile, class: Shop do |shop|
