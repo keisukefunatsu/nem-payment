@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :shop do
-    email "funatsuman@example.com"
+    email "user@example.com"
     password "1234567"
     confirmed_at 1.day.ago
 
@@ -13,7 +13,7 @@ FactoryGirl.define do
   end
 
   factory :shop_without_profile, class: Shop do |shop|
-    shop.email "funatsuman2@example.com"
+    shop.email "user2@example.com"
     shop.password "1234567"
     shop.confirmed_at 1.day.ago
   end
