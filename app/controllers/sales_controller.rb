@@ -10,8 +10,6 @@ class SalesController < ApplicationController
       from = params[:csv_from]
       to = params[:csv_to]
       if is_valid_date?(from) && is_valid_date?(to)
-        logger.debug(from)
-        logger.debug(to)
         @sales = Sale.where(shop_id: current_shop.id, created_at: from...to).order(created_at: :desc)
       else
         logger.debug('ng')
