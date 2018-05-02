@@ -1,10 +1,12 @@
 ## Primary
-- write test right now
-- multi signature
-## Secondary
 - manage sales by each month
+- multi signature
+- xem price decimal validation
+- check valid xem address
+
+## Secondary
+
 - show total sales by each month
-- xem address validation
 
 ## server 
 - backup

@@ -6,13 +6,25 @@ class SalesController < ApplicationController
   before_action :shop_has_sales?, only: [:show, :edit, :update, :destroy]
 
   def sales_to_csv
-    @sales = Sale.where(shop_id: current_shop.id)
+    from = params[:csv_from]
+    to = params[:csv_to]
+    if is_valid_date?(from) && is_valid_date?(to)
+      @sales = Sale.where(@sale, created_at: from...to).order(created_at: :desc)
+    else
+      @sales = Sale.where(@sale).order(created_at: :desc)
+    end
   end
   # GET /sales
   # GET /sales.json
   def index
     if current_shop
-      @sales = Sale.where(shop_id: current_shop.id).page(params[:page]).order(created_at: :desc)
+      from = params[:csv_from]
+      to = params[:csv_to]
+      if is_valid_date?(from) && is_valid_date?(to)
+        @sales = Sale.where(shop_id: current_shop.id, created_at: from...to).page(params[:page]).order(created_at: :desc)
+      else
+        @sales = Sale.where(shop_id: current_shop.id).page(params[:page]).order(created_at: :desc)
+      end
     else
       @xem_price = XemPrice.page(params[:page]).order(created_at: :desc)
     end

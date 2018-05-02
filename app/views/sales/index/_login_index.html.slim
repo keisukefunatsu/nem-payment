@@ -2,10 +2,17 @@
   .row
     .col-md-12
       h1 売上一覧
+      = @notice
       = paginate @sales, theme: 'twitter-bootstrap-4'
       p
-        = link_to('CSVをダウンロード','/sales/sales_to_csv.csv',{class: 'btn btn-secondary',format: :csv})
-        = link_to '新規作成', new_sale_path, class: 'btn btn-info ml-4'
+        .col-md-8
+          = form_tag(root_path, method: 'post', class: 'form-inline')
+            .input-group.mb-2.mr-sm-2.mb-sm-0
+              = date_field_tag :csv_from, :created_at, value: Time.now.beginning_of_month.strftime("%Y-%m-%d"), class: 'form-control'
+              = date_field_tag :csv_to, :created_at, value: Time.now.end_of_month.strftime("%Y-%m-%d"), class: 'form-control'
+              = submit_tag '表示', class: 'btn btn-success'              
+      = link_to('CSVをダウンロード','/sales/sales_to_csv.csv' ,{class: 'btn btn-secondary',format: :csv})
+      = link_to '新規作成', new_sale_path, class: 'btn btn-info ml-4'
       table.table.table-responsive
         thead
           tr

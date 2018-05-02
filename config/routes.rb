@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get 'shops' => 'shops#index'
+  root to: 'sales#index'
+  post '/' => 'sales#index'
   
+  get 'shops' => 'shops#index'  
   get 'xem_prices/fetch_xem_price'
   get 'xem_prices/check_xem_payment'
   post 'xem_prices/check_xem_payment'
@@ -12,7 +14,7 @@ Rails.application.routes.draw do
   end
   resource :shop_profiles
   devise_for :shops
-  root to: 'sales#index'
+  
 
   # If no routes matched return error page
   get '*path', controller: 'application', action: 'routing_error'
