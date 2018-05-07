@@ -8,6 +8,11 @@ describe XemPricesHelper do
     expected = 'NBHEOHLCGIAAHDXEMZ2NUMI4QZVDXD7ZBMUEKY5R'
     expect(output).to eq expected
   end
+
+  it 'can convert payload' do
+    response = decode_xem_message('346565316130613331333765')
+    expect(response).to eq '4ee1a0a3137e'
+  end
   
   it 'can fetch xem SN response' do
     response = xem_confirmed_transaction('NBHEOH-LCGIAA-HDXEMZ-2NUMI4-QZVDXD-7ZBMUE-KY5R')

@@ -42,6 +42,9 @@ module XemPricesHelper
       0
     end
   end
+  def decode_xem_message(message)
+    [message].pack('H*')
+  end
 
   def xem_payment(price, address, message, sale_id)
     # check unconfirmed transactions
@@ -51,7 +54,7 @@ module XemPricesHelper
       data.each do |datum|
         sent_message = [datum['transaction']['message']['payload']].pack('H*')
         sent_price = datum['transaction']['amount'].to_f / 1000000
-        if message == sent_message && price.to_f == sent_price
+        if message == sent_message && price.to_f <= sent_price
           return {status: 'OK', confirmed: false, message: '送金の承認待ち状態です'}
         end
       end
@@ -64,7 +67,7 @@ module XemPricesHelper
       sent_message = [datum['transaction']['message']['payload']].pack('H*')
       sent_price = datum['transaction']['amount'].to_f / 1000000
       #  check message and price are correct
-      if message == sent_message && price.to_f == sent_price
+      if message == sent_message && price.to_f <= sent_price
         @sale = Sale.find(sale_id)
         @sale.confirmed = true
         if @sale.save
