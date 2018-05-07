@@ -97,4 +97,12 @@ module XemPricesHelper
       {status: 'NG'}
     end    
   end
+
+  def is_valid_xem_address?(address)
+    converted = convert_xem_address(address)
+    response = xem_api_response(address, 'get')
+    return false if response['account'].nil? 
+    return true if response['account']['address'] == converted
+    false
+  end
 end
