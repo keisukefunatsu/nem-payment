@@ -4,4 +4,9 @@ rvm:
 script:
   - bundle exec rails db:setup
   - bundle exec rspec
+env:
+  global:
+    SECRET_KEY_BASE="75003b2ac26145fcb6d01b9084aff27e18f3a6549022ff5651913dd27ff9003cdd5874ea1d52550520d0f64a61c26a13cc4e57c1db2e4530cd95f941af6f111d"
+    LOCAL_HOST_NAME="localhost
+
 cache: bundler 
