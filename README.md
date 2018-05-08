@@ -1,4 +1,6 @@
 # Get started
+[![Build Status](https://travis-ci.org/keisukefunatsu/nem-payment.svg?branch=master)](https://travis-ci.org/keisukefunatsu/nem-payment)
+
 - Install gems
     - `bundle install –path=vendor/bundle`
 
