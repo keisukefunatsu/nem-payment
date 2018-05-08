@@ -10,7 +10,7 @@
     - 2.4.2
 
 - How to run the test suite
-    - bundle exec rspec
+    - `bundle exec rspec`
 
 # Deployment instructions
 Precompile js css
