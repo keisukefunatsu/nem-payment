@@ -25,6 +25,11 @@ describe XemPricesHelper do
     expect(response).to eq true
   end
 
+  it 'can check valid address' do
+    response = is_valid_xem_address?('NBHEOHLCGIAAHDXEMZ2NUMI4QZVDXD7ZBMUEKY5R')
+    expect(response).to eq true
+  end
+
   it 'can check invalid address' do
     response = is_valid_xem_address?('testaddress')
     expect(response).to eq false
